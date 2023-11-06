@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Accompagnement;
+use App\Entity\Chiffres;
+use App\Entity\Historique;
 use App\Entity\Insertion;
 use App\Entity\PartieContact;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -47,6 +49,8 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Accompagnement', 'fas fa-list', Accompagnement::class);
         yield MenuItem::linkToCrud('Insertion', 'fas fa-list', Insertion::class);
         yield MenuItem::linkToCrud('Partie contact', 'fas fa-list', PartieContact::class);
+        yield MenuItem::linkToCrud('Historique', 'fas fa-list', Historique::class);
+        yield MenuItem::linkToCrud('Chiffres', 'fas fa-list', Chiffres::class);
 
     }
 }
