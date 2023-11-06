@@ -21,7 +21,7 @@ class AccompagnementCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
-            TextEditorField::new('description'),
+            TextField::new('description'),
             TextField::new('imageFile') ->setFormType(VichFileType::class)->onlyWhenCreating(),
             TextField::new('imageFile') ->setFormType(VichFileType::class)->onlyWhenUpdating(),
             ImageField::new('ImageName') ->setBasePath('/uploads/images')->onlyonindex(),
