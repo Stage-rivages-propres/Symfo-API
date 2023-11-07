@@ -6,6 +6,7 @@ use App\Entity\Accompagnement;
 use App\Entity\Chiffres;
 use App\Entity\Historique;
 use App\Entity\Insertion;
+use App\Entity\Membres;
 use App\Entity\PartieContact;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -51,6 +52,7 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Partie contact', 'fas fa-list', PartieContact::class);
         yield MenuItem::linkToCrud('Historique', 'fas fa-list', Historique::class);
         yield MenuItem::linkToCrud('Chiffres', 'fas fa-list', Chiffres::class);
+        yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
 
     }
 }
