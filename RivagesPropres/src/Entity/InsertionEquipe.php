@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\DirectionRepository;
+use App\Repository\InsertionEquipeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: DirectionRepository::class)]
-class Direction
+#[ORM\Entity(repositoryClass: InsertionEquipeRepository::class)]
+class InsertionEquipe
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

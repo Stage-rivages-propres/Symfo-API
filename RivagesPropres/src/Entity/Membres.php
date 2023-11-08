@@ -79,9 +79,6 @@ class Membres
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\ManyToOne(inversedBy: 'Relation')]
-    private ?Direction $Direction = null;
-
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -125,17 +122,5 @@ class Membres
     public function getImageSize(): ?int
     {
         return $this->imageSize;
-    }
-
-    public function getDirection(): ?Direction
-    {
-        return $this->Direction;
-    }
-
-    public function setDirection(?Direction $Direction): static
-    {
-        $this->Direction = $Direction;
-
-        return $this;
     }
 }

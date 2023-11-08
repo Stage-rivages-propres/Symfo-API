@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\DirectionRepository;
+use App\Repository\CommunicationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: DirectionRepository::class)]
-class Direction
+#[ORM\Entity(repositoryClass: CommunicationRepository::class)]
+class Communication
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
