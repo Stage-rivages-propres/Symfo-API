@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\MembresRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Uid\Uuid;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
@@ -26,6 +27,9 @@ class Membres
 
     #[ORM\Column(length: 75)]
     private ?string $poste = null;
+
+    #[ORM\Column(length: 75)]
+    private ?string $catégorie_équipe = null;
 
     public function getId(): ?int
     {
@@ -122,5 +126,17 @@ class Membres
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getCatégorieéquipe(): ?Uuid
+    {
+        return $this->catégorie_équipe;
+    }
+
+    public function setCatégorieéquipe(?Uuid $catégorie_équipe): static
+    {
+        $this->catégorie_équipe = $catégorie_équipe;
+
+        return $this;
     }
 }
