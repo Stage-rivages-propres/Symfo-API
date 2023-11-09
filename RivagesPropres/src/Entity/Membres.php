@@ -28,9 +28,6 @@ class Membres
     #[ORM\Column(length: 75)]
     private ?string $poste = null;
 
-    #[ORM\Column(length: 75)]
-    private ?string $catégorie_équipe = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -83,6 +80,9 @@ class Membres
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $CatégorieEquipe = null;
+
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -128,15 +128,16 @@ class Membres
         return $this->imageSize;
     }
 
-    public function getCatégorieéquipe(): ?Uuid
+    public function getCatégorieEquipe(): ?string
     {
-        return $this->catégorie_équipe;
+        return $this->CatégorieEquipe;
     }
 
-    public function setCatégorieéquipe(?Uuid $catégorie_équipe): static
+    public function setCatégorieEquipe(string $CatégorieEquipe): static
     {
-        $this->catégorie_équipe = $catégorie_équipe;
+        $this->CatégorieEquipe = $CatégorieEquipe;
 
         return $this;
     }
+
 }
