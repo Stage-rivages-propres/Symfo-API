@@ -4,10 +4,13 @@ namespace App\Controller\Admin;
 
 use App\Entity\Accompagnement;
 use App\Entity\Chiffres;
+use App\Entity\DerniersChantiers;
 use App\Entity\Historique;
 use App\Entity\Insertion;
 use App\Entity\Membres;
 use App\Entity\PartieContact;
+use App\Entity\SupportsAct;
+use App\Entity\Témoignages;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -53,6 +56,12 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Historique', 'fas fa-list', Historique::class);
         yield MenuItem::linkToCrud('Chiffres', 'fas fa-list', Chiffres::class);
         yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
+        yield MenuItem::linkToCrud('Derniers chantiers', 'fas fa-list', DerniersChantiers::class);
+        yield MenuItem::linkToCrud('Témoignages', 'fas fa-list', Témoignages::class);
+        yield MenuItem::linkToCrud("Supports d'activité", 'fas fa-list', SupportsAct::class);
+        // yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
+        // yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
+
 
     }
 }
