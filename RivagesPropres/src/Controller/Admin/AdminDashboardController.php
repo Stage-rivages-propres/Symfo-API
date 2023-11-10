@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Accompagnement;
+use App\Entity\AccueilIMG;
 use App\Entity\Chiffres;
 use App\Entity\DerniersChantiers;
 use App\Entity\Historique;
@@ -72,7 +73,7 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Newsletter', 'fas fa-list', Newsletter::class);
         yield MenuItem::linkToCrud("Rapport d'activité", 'fas fa-list', RapportActivite::class);
         yield MenuItem::linkToCrud("Lettre d'information", 'fas fa-list', Lettreinfo::class);
-        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        yield MenuItem::linkToCrud("Image d'accueil", 'fas fa-list', AccueilIMG::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
