@@ -57,7 +57,7 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Chiffres', 'fas fa-list', Chiffres::class);
         yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
         yield MenuItem::linkToCrud('Derniers chantiers', 'fas fa-list', DerniersChantiers::class);
-        yield MenuItem::linkToCrud('Témoignages', 'fas fa-list', Témoignages::class);
+        // yield MenuItem::linkToCrud('Témoignages', 'fas fa-list', Témoignages::class);
         yield MenuItem::linkToCrud("Supports d'activité", 'fas fa-list', SupportsAct::class);
         // yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
         // yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
