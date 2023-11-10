@@ -80,7 +80,7 @@ class Membres
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $CatégorieEquipe = null;
+    private ?string $categorieEquipe = null;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -127,14 +127,14 @@ class Membres
         return $this->imageSize;
     }
 
-    public function getCatégorieEquipe(): ?string
+    public function getcategorieEquipe(): ?string
     {
-        return $this->CatégorieEquipe;
+        return $this->categorieEquipe;
     }
 
-    public function setCatégorieEquipe(string $CatégorieEquipe): static
+    public function setcategorieEquipe(string $categorieEquipe): static
     {
-        $this->CatégorieEquipe = $CatégorieEquipe;
+        $this->categorieEquipe = $categorieEquipe;
 
         return $this;
     }

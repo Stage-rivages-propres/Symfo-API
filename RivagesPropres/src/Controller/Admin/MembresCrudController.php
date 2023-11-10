@@ -21,13 +21,13 @@ class MembresCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
             TextField::new('nom'),
             TextField::new('prenom'),
             TextField::new('poste'),
             TextField::new('imageFile') ->setFormType(VichFileType::class)->onlyWhenCreating(),
             TextField::new('imageFile') ->setFormType(VichFileType::class)->onlyWhenUpdating(),
             ImageField::new('ImageName') ->setBasePath('/uploads/images')->onlyonindex(),
+            TextField::new('categorie_equipe'),
         ];
     }
     
