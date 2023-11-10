@@ -7,9 +7,16 @@ use App\Entity\Chiffres;
 use App\Entity\DerniersChantiers;
 use App\Entity\Historique;
 use App\Entity\Insertion;
+use App\Entity\Lettreinfo;
+use App\Entity\LogoDemarche;
+use App\Entity\LogoRegion;
+use App\Entity\LogoRivages;
 use App\Entity\Membres;
+use App\Entity\Newsletter;
 use App\Entity\PartieContact;
+use App\Entity\RapportActivite;
 use App\Entity\SupportsAct;
+use App\Entity\Temoignages;
 use App\Entity\Témoignages;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -57,10 +64,21 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Chiffres', 'fas fa-list', Chiffres::class);
         yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
         yield MenuItem::linkToCrud('Derniers chantiers', 'fas fa-list', DerniersChantiers::class);
-        // yield MenuItem::linkToCrud('Témoignages', 'fas fa-list', Témoignages::class);
+        yield MenuItem::linkToCrud('Témoignages', 'fas fa-list', Temoignages::class);
         yield MenuItem::linkToCrud("Supports d'activité", 'fas fa-list', SupportsAct::class);
-        // yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
-        // yield MenuItem::linkToCrud('Membres', 'fas fa-list', Membres::class);
+        yield MenuItem::linkToCrud('Logo Rivages', 'fas fa-list', LogoRivages::class);
+        yield MenuItem::linkToCrud('Logo Region', 'fas fa-list', LogoRegion::class);
+        yield MenuItem::linkToCrud('Logos Démarche', 'fas fa-list', LogoDemarche::class);
+        yield MenuItem::linkToCrud('Newsletter', 'fas fa-list', Newsletter::class);
+        yield MenuItem::linkToCrud("Rapport d'activité", 'fas fa-list', RapportActivite::class);
+        yield MenuItem::linkToCrud("Lettre d'information", 'fas fa-list', Lettreinfo::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        
 
 
     }
