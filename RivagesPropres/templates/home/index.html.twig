@@ -4,8 +4,17 @@
 
 {% block body %}
 <style>
-
+    .logo {width: 50%; height:auto; padding-left:25%}
+    .txtredirect {font-size:25px; text-align:center; text-decoration:none; margin-top:10%}
+    .link{text-decoration:none; color:blue}
+    .fond{}
 </style>
-
-<div><p>Vous n'êtes pas sur le bon site, redirection ici</p></div>
+<div class='fond'>
+    <div><p class='txtredirect'>Vous n'êtes pas sur le bon site, redirection <a class='link' href='http://rivagespropres.fr'>ici</a></p></div>
+    {% for logo in logo %}
+        {% if logo.id == 1 %}
+            <img class="logo" src="http://localhost:8000/uploads/{{ logo.imageName}}"</p>
+        {% endif %}
+    {% endfor %}
+</div>
 {% endblock %}

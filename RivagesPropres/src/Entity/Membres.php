@@ -79,8 +79,14 @@ class Membres
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 2)]
     private ?string $categorieEquipe = null;
+
+    #[ORM\Column(length: 2, nullable: true)]
+    private ?string $categorieDemarche = null;
+
+    #[ORM\Column(length: 2, nullable: true)]
+    private ?string $categorieDemarche2 = null;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -135,6 +141,30 @@ class Membres
     public function setcategorieEquipe(string $categorieEquipe): static
     {
         $this->categorieEquipe = $categorieEquipe;
+
+        return $this;
+    }
+
+    public function getCategorieDemarche(): ?string
+    {
+        return $this->categorieDemarche;
+    }
+
+    public function setCategorieDemarche(?string $categorieDemarche): static
+    {
+        $this->categorieDemarche = $categorieDemarche;
+
+        return $this;
+    }
+
+    public function getCategorieDemarche2(): ?string
+    {
+        return $this->categorieDemarche2;
+    }
+
+    public function setCategorieDemarche2(?string $categorieDemarche2): static
+    {
+        $this->categorieDemarche2 = $categorieDemarche2;
 
         return $this;
     }

@@ -18,7 +18,6 @@ use App\Entity\PartieContact;
 use App\Entity\RapportActivite;
 use App\Entity\SupportsAct;
 use App\Entity\Temoignages;
-use App\Entity\Témoignages;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
