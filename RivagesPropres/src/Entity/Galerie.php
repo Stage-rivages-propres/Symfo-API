@@ -3,56 +3,30 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\InsertionRepository;
+use App\Repository\GalerieRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\DBAL\Types\Types;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
-#[ORM\Entity(repositoryClass: InsertionRepository::class)]
+#[ORM\Entity(repositoryClass: GalerieRepository::class)]
 #[ApiResource]
 #[Vich\Uploadable]
-class Insertion
+class Galerie
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $nom = null;
-
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
+    #[ORM\Column(length: 2)]
+    private ?string $categorieGalerie = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(string $nom): static
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): static
-    {
-        $this->description = $description;
-
-        return $this;
-    }
     #[Vich\UploadableField(mapping: 'uploads', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 
@@ -108,5 +82,17 @@ class Insertion
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getCategorieGalerie(): ?string
+    {
+        return $this->categorieGalerie;
+    }
+
+    public function setCategorieGalerie(string $categorieGalerie): static
+    {
+        $this->categorieGalerie = $categorieGalerie;
+
+        return $this;
     }
 }
