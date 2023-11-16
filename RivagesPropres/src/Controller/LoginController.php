@@ -2,31 +2,35 @@
 
 namespace App\Controller;
 
+use App\Repository\AccueilIMGRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    #[Route(path: '/login', name: 'app_login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    #[Route('/login', name: 'app_login')]
+    public function index(AuthenticationUtils $authenticationUtils, AccueilIMGRepository $accueilIMGRepository ): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
-
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
+
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('login/index.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
-    }
+        $accueilIMG = $accueilIMGRepository ->findAll();
 
-    #[Route(path: '/logout', name: 'app_logout')]
-    public function logout(): void
+        return $this->render('login/index.html.twig', [
+            'last_username' => $lastUsername,
+            'error'         => $error,
+            'accueilIMG'    => $accueilIMG,
+        ]);
+    }
+    #[Route('/logout', name: 'app_logout', methods: ['GET'])]
+    public function logout(): never
     {
-        throw new \LogicException('This method can be blank - will be intercepted by the logout key on ur firewall.');
+        // controller can be blank: it will never be called!
+        throw new \Exception('Don\'t forget to activate logout in security.yaml');
     }
 }

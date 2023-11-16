@@ -1,39 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio Gavois Karl - Log in{% endblock %}
+{% block title %}Hello LoginController!{% endblock %}
 
 {% block body %}
-<form method="post">
+<style>
+    body{margin:0;padding:0}
+    .accueilIMG{width:100vw; height:99.6vh; object-fit: cover;}
+    .FormLogin{display:flex; flex-direction:column; justify-content:center; position:absolute; top:45%; left:50%; transform: translate(-50%, -50%);text-align:center; gap:50px; width:25%;}
+    .DivLogin{display:flex; flex-direction:column;gap:15px}
+    .LabelLogin{color:black; font-size:35px}
+    .InputLogin {width:20vw; height:3.5vh;border-radius:5vw;margin-left:2.5vw; text-align:center}
+    .BtnLogin{width:15vw; height:4vh; border-radius:20px; margin-left:5vw; color:#FFD500; background-color:#004077}
+</style>
+
     {% if error %}
-        <div class="logged2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="logged">
-            Vous êtes connectés comme : {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+    <form action="{{ path('app_login') }}" method="post" class="FormLogin">
+        <div class="DivLogin">
+            <label for="username" class="LabelLogin">Email:</label>
+            <input class="InputLogin" type="text" id="username" name="_username" value="{{ last_username }}">
         </div>
-    {% endif %}
+        <div class="DivLogin">
+            <label for="password" class="LabelLogin">Mot de passe :</label>
+            <input class="InputLogin" type="password" id="password" name="_password">
+        </div>
+        {# If you want to control the URL the user is redirected to on success
+        <input type="hidden" name="_target_path" value="/account"> #}
 
-    <h1 class="h3 mb-3 font-weight-normal centertext mtop-40">Connexion</h1>
-    <div class="containerlog">
-        <label class="_username" for="inputEmail">Email</label>
-        <input type="email" value="{{ last_username }}" name="_username" id="_username" class="form-control emailinput" autocomplete="email" required autofocus>
-        <label class="password" for="password">mot de passe :</label>
-        <input type="password" name="password" id="password" class="passwordinput" autocomplete="current-password" required>
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
-            </div>
-        #}
-        <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
-        </button>
-    </div>
-</form>
+        <button class="BtnLogin" type="submit">Connexion</button>
+    </form>
+    {% for accueilIMG in accueilIMG %}
+        {% if accueilIMG.id == 1 %}
+            <img class="accueilIMG" src="http://localhost:8000/uploads/{{ accueilIMG.imageName}}"</p>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
