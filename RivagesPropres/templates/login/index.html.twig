@@ -1,20 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LoginController!{% endblock %}
+{% block title %}Portfolio Gavois Karl - Log in{% endblock %}
 
 {% block body %}
+<form method="post">
     {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div class="logged2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('app_login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}">
+    {% if app.user %}
+        <div class="logged">
+            Vous êtes connectés comme : {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+    {% endif %}
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password">
+    <h1 class="h3 mb-3 font-weight-normal centertext mtop-40">Connexion</h1>
+    <div class="containerlog">
+        <label class="_username" for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="_username" id="_username" class="form-control emailinput" autocomplete="email" required autofocus>
+        <label class="password" for="password">mot de passe :</label>
+        <input type="password" name="password" id="password" class="passwordinput" autocomplete="current-password" required>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
 
-        <input type="hidden" name="admin" value="/admin">
-        <button type="submit">login</button>
-    </form>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        #}
+        <button class="btn btn-lg btn-primary" type="submit">
+            Sign in
+        </button>
+    </div>
+</form>
 {% endblock %}
