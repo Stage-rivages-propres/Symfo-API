@@ -5,12 +5,14 @@ namespace App\Controller\Admin;
 use App\Entity\Accompagnement;
 use App\Entity\AccueilIMG;
 use App\Entity\Chiffres;
+use App\Entity\DemarcheBase;
 use App\Entity\DerniersChantiers;
 use App\Entity\Galerie;
 use App\Entity\Historique;
 use App\Entity\Insertion;
 use App\Entity\Kiosque;
 use App\Entity\Lettreinfo;
+use App\Entity\Lienvideo;
 use App\Entity\LogoDemarche;
 use App\Entity\LogoRegion;
 use App\Entity\LogoRivages;
@@ -79,8 +81,13 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Admins', 'fas fa-list', User::class);
         yield MenuItem::linkToCrud('Kisoque', 'fas fa-list', Kiosque::class);
         yield MenuItem::linkToCrud('Galerie', 'fas fa-list', Galerie::class);
+        yield MenuItem::linkToCrud('Lien Vidéo', 'fas fa-list', Lienvideo::class);
+        yield MenuItem::linkToCrud('Démarche qualité', 'fas fa-list', DemarcheBase::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        
         
 
 
