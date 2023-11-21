@@ -10,7 +10,9 @@ services:
         ports:
             - 8000:8000
         volumes:
-            - ./RivagesPropres/:/var/www/
+            - ./RivagesPropres/:/var/www:cached
+            - symfony-var:/var/www/var
+            - symfony-vendor:/var/www/vendor
         networks:
             - RivagesPropres
 
@@ -41,6 +43,8 @@ services:
 
 volumes:
     db-data:
+    symfony-var:
+    symfony-vendor:
 
 networks:
     RivagesPropres:
