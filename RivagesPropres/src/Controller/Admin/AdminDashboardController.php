@@ -7,6 +7,7 @@ use App\Entity\AccueilIMG;
 use App\Entity\Chiffres;
 use App\Entity\DemarcheBase;
 use App\Entity\DerniersChantiers;
+use App\Entity\Events;
 use App\Entity\Galerie;
 use App\Entity\Historique;
 use App\Entity\Insertion;
@@ -83,7 +84,7 @@ class AdminDashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Galerie', 'fas fa-list', Galerie::class);
         yield MenuItem::linkToCrud('Lien Vidéo', 'fas fa-list', Lienvideo::class);
         yield MenuItem::linkToCrud('Démarche qualité', 'fas fa-list', DemarcheBase::class);
-        // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
+        yield MenuItem::linkToCrud(' Evenements ', 'fas fa-list', Events::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
         // yield MenuItem::linkToCrud(' -- ', 'fas fa-list', --::class);
