@@ -6,6 +6,10 @@
 parameters:
 
 services:
+    App\Mailer\PostmarkMailer:
+        class: App\Mailer\PostmarkMailer
+        arguments:
+            - '%env(Mailer_POSTMARK_SERVER_TOKEN)%'
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
