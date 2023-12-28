@@ -11,7 +11,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ContactController extends AbstractController
+class PostulerController extends AbstractController
 {
     private $mailer;
 
@@ -20,7 +20,7 @@ class ContactController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    #[Route('/contact')]
+    #[Route('/postuler')]
     public function sendEmail(Request $request): Response
     {
         // Récup données
@@ -33,7 +33,7 @@ class ContactController extends AbstractController
         $email = (new TemplatedEmail())
             ->from('gavoiskarl@gmail.com')
             ->to('gavois.karl@gavois-k.fr')
-            ->htmlTemplate('emails/contact.html.twig')
+            ->htmlTemplate('emails/postuler.html.twig')
             // ->cc('cc@example.com')
             // ->bcc('bcc@example.com')
             // ->replyTo('fabien@example.com')
