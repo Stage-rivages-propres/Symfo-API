@@ -40,7 +40,7 @@ class PostulerController extends AbstractController
             // ->priority(Email::PRIORITY_HIGH)
             ->subject("Nouveau message de la part de : $prenom $nom")
             ->text('Je suis un texte')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            ->html('<p>See Twig integration for better HTML integration!</p>'); 
 
         $this->mailer->send($email);
 

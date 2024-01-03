@@ -20,16 +20,19 @@ class ContactController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    #[Route('/contact')]
+    #[Route('/contact') ]
     public function sendEmail(Request $request): Response
     {
+        $data = json_decode($request->getContent());
+        // dd($data);
         // Récup données
-        $objet = $request->request->get('objet');
-        $mail = $request->request->get('mail');
-        $message = $request->request->get('message');
-        $prenom = $request->request->get('prenom');
-        $nom = $request->request->get('nom');
-
+        $objet = $data->objet;
+        $mail = $data->mail;
+        $message = $data->message;
+        $prenom = $data->prenom;
+        $nom = $data->nom;
+        // dd($nom);
+        
         $email = (new TemplatedEmail())
             ->from('gavoiskarl@gmail.com')
             ->to('gavois.karl@gavois-k.fr')
@@ -38,9 +41,16 @@ class ContactController extends AbstractController
             // ->bcc('bcc@example.com')
             // ->replyTo('fabien@example.com')
             // ->priority(Email::PRIORITY_HIGH)
-            ->subject("Nouveau message de la part de : $prenom $nom")
+            ->subject("Nouvelle demande de contact !")
             ->text('Je suis un texte')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            ->htmlTemplate('emails/contact.html.twig')
+            ->context([
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'objet' => $objet,
+                'mail' => $mail,
+                'message' => $message
+            ]);
 
         $this->mailer->send($email);
 
