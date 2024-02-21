@@ -1,14 +1,9 @@
-{% block body %}
-<style>
-    .message{font-color:#5986f5; color:#004077}
-    .genereated{font-size:25px}
-</style>
 
 <h1>Nouvelle demande de contact de la part de :</h1>
 <h2> Nom : {{nom}}<br>Prénom : {{prenom}}</h2>
 <h3>Objet : {{objet}}</h3>
-<p class="message">Message complet : {{message}}</p>
+<p>Message complet : {{message}}</p>
 <h3>Email de la personne : {{mail}}</h3>
 <br>
-<p class="generated">Cet email est généré automatiquement à partir du site Rivages Propres, merci de ne pas y répondre</p>
-{% endblock %}
+<p>Cet email est généré automatiquement à partir du site Rivages Propres, merci de ne pas y répondre</p>
+

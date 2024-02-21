@@ -20,7 +20,7 @@ class PostulerController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    #[Route('/postuler')]
+    #[Route('/postuler' , methods: ['POST'])]
     public function sendEmail(Request $request): Response
     {
             // Récup données
@@ -31,7 +31,7 @@ class PostulerController extends AbstractController
         $mail = $data->mail;
         $cvFile = $data->cv;
         $cafFile = $data->caf;
-        $dob = $data->dob;
+        // $dob = $data->dob;
         
         $email = (new TemplatedEmail())
         ->from('gavoiskarl@gmail.com')
@@ -44,7 +44,7 @@ class PostulerController extends AbstractController
             'cv' => $cvFile,
             'mail' => $mail,
             'caf' => $cafFile,
-            'dob' => $dob
+            // 'dob' => $dob
         ])
         ->attach($cvFile)
         ->attach($cafFile);

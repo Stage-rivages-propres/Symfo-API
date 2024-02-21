@@ -20,7 +20,7 @@ class ContactController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    #[Route('/contact') ]
+    #[Route('/contact', methods: ['POST'])]
     public function sendEmail(Request $request): Response
     {
         $data = json_decode($request->getContent());
@@ -37,13 +37,8 @@ class ContactController extends AbstractController
             ->from('gavoiskarl@gmail.com')
             ->to('gavois.karl@gavois-k.fr')
             ->htmlTemplate('emails/contact.html.twig')
-            // ->cc('cc@example.com')
-            // ->bcc('bcc@example.com')
-            // ->replyTo('fabien@example.com')
-            // ->priority(Email::PRIORITY_HIGH)
             ->subject("Nouvelle demande de contact !")
             ->text('Je suis un texte')
-            ->htmlTemplate('emails/contact.html.twig')
             ->context([
                 'nom' => $nom,
                 'prenom' => $prenom,
