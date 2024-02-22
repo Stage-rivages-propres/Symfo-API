@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database
--- Généré le : mer. 21 fév. 2024 à 21:49
+-- Généré le : jeu. 22 fév. 2024 à 21:01
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.16
 
@@ -398,37 +398,38 @@ CREATE TABLE `membres` (
 --
 
 INSERT INTO `membres` (`id`, `nom`, `prenom`, `poste`, `image_name`, `image_size`, `updated_at`, `categorie_equipe`, `categorie_demarche`, `categorie_demarche2`) VALUES
-(1, 'Delbecq', 'Olivier', 'Président', 'olivier-delbecq-654a4f0106801150240864.png', 129566, '2023-11-07 14:51:45', '1', '1', NULL),
-(2, 'Vasconi', 'David', 'Directeur', 'david-vasconi-654a50a5af45f319483898.jpg', 58593, '2023-11-07 14:58:45', '1', '1', NULL),
-(3, 'Crépin', 'Véronique', 'Assistante administrative', 'veronique-crepin-654a50d95d0cc744375107.png', 72372, '2023-11-07 14:59:37', '2', '2', NULL),
-(4, 'Specq', 'Pascale', 'Secrétaire', 'pascale-654a50f75b44c652868030.jpg', 67973, '2023-11-07 15:00:07', '2', '2', NULL),
-(5, 'Nssis', 'Salima', 'Comptable', 'salima-654a510f0d503217593795.jpg', 48166, '2023-11-07 15:00:31', '2', '7', NULL),
-(6, 'Gense', 'Dolores', 'Chargée de mission insertion', 'dolores-654a513354ff7603298491.jpg', 15036, '2023-11-07 15:01:07', '3', '3', NULL),
-(7, 'Soret', 'Gwenaëlle', 'Chargée de mission insertion', 'gwenaelle-654a515579d96663878011.jpg', 19194, '2023-11-07 15:01:41', '3', '3', NULL),
-(8, 'Quéhen', 'Kelly', 'Chargée de mission insertion', 'kelly-654a51783900b464397575.jpg', 17348, '2023-11-07 15:02:16', '3', '3', NULL),
-(9, 'Fournier', 'Amélie', 'Médiatrice Sociale', 'amelie-654a5199e7cb5484758142.png', 122633, '2023-11-07 15:02:49', '3', '6', NULL),
-(10, 'Mamelin', 'Lou', 'Chargée de communication', 'lou-654a51bc0a773150785093.jpg', 6969, '2023-11-07 15:03:24', '4', '4', '5'),
-(11, 'Bulot', 'Aymeric', 'Responsable technique', 'aymeric-654e353312e94642598678.jpg', 12416, '2023-11-10 13:50:43', '5', '4', NULL),
-(12, 'Gauduin', 'Bruno', 'Responsable technique adjoint', 'bruno-654e355f04391958433665.png', 126114, '2023-11-10 13:51:27', '5', '4', NULL),
-(13, 'Ducrocq', 'Gabriel', 'Responsable logistique', 'gabriel-654e359507c1d757010916.jpg', 49307, '2023-11-10 13:52:21', '5', '6', NULL),
-(14, 'Bette', 'David', 'Préparateur magasinier', 'david-654e35c315326699151792.jpg', 11486, '2023-11-10 13:53:07', '5', '6', NULL),
-(15, 'Leleu', 'Thomas', 'Encadrant technqiue Cycleco', 'thomas-654e364a65208887463588.jpg', 44257, '2023-11-10 13:55:22', '5', '4', NULL),
-(16, 'Houart', 'Laurent', 'Encadrant technique Bâtiment', 'laurent-654e36a0c810a584954550.png', 117090, '2023-11-10 13:56:48', '5', '4', NULL),
-(17, 'Viandier', 'Dimitri', 'Encadrant technique Environnement', 'dimitri-654e36dfbfed9458970195.png', 136156, '2023-11-10 13:57:51', '5', NULL, NULL),
-(18, 'Falempin', 'Mathieu', 'Encadrant technique Environnement', 'mathieu-654e37bb1bd67310242190.jpg', 12453, '2023-11-10 14:01:31', '5', NULL, NULL),
-(19, 'Soki', 'Vincent', 'Encadrant technique Environnement', 'vincent-654e37ee386ac400950138.png', 124245, '2023-11-10 14:02:22', '5', NULL, NULL),
-(20, 'Leprêtre', 'Yves', 'Encadrant technique Environnement', 'yves-654e381762105854320851.png', 103869, '2023-11-10 14:03:03', '5', NULL, NULL),
-(21, 'Boulogne', 'Ludovic', 'Encadrant technique Bâtiment', 'ludovic-654e3845950e8496513839.png', 136978, '2023-11-10 14:03:49', '5', NULL, NULL),
-(22, 'Petit', 'Laurent', 'Encadrant technique Bâtiment', 'laurent-654e386964af6714146088.jpg', 14874, '2023-11-10 14:04:25', '5', NULL, NULL),
-(23, 'Playoult', 'Rémi', 'Encadrant technique Menuiserie', 'remy-654e38a97fa64637117123.png', 118232, '2023-11-10 14:05:29', '5', NULL, NULL),
-(24, 'Brulin', 'Matthieu', 'Encadrant technique Environnement', 'matthieu-654e38d2703c4711630705.jpg', 14915, '2023-11-10 14:06:10', '5', NULL, NULL),
-(25, 'Butez', 'Mathieu', 'Encadrant technique Bâtiment', 'mathieu2-654e38f82a7ee250288600.png', 131770, '2023-11-10 14:06:48', '5', NULL, NULL),
-(26, 'Tintillier', 'Rodrigue', 'Encadrant technique Environnement', 'rodrigue-654e3920d21c9186509824.png', 135591, '2023-11-10 14:07:28', '5', NULL, NULL),
-(27, 'Caux', 'Gérald', 'Encadrant technique Environnement', 'gerald-654e394322633620831434.jpg', 13130, '2023-11-10 14:08:03', '5', NULL, NULL),
-(28, 'Wasselin', 'Christophe', 'Encadrant technique Environnement', 'christophe-654e398e799b8889477286.jpg', 9711, '2023-11-10 14:09:18', '5', NULL, NULL),
-(29, 'Leprêtre', 'Mathéo', 'Encadrant technique Environnement', 'matheo-654e39ba4fad3072603188.jpg', 7937, '2023-11-10 14:10:02', '5', NULL, NULL),
-(30, 'Fauviaux', 'Grégory', 'Encadrant technique Environnement', 'gregory-654e39e884fee506382825.jpg', 11203, '2023-11-10 14:10:48', '5', NULL, NULL),
-(31, 'Hodicq', 'Bernard', 'Encadrant technique Bâtiment', 'bernard-654e3a0b9a197617703814.jpg', 10832, '2023-11-10 14:11:23', '5', NULL, NULL);
+(1, 'Delbecq', 'Olivier', 'Président', 'odelbecq-65d77761664eb317172100.png', 129566, '2024-02-22 16:33:37', '1', '1', NULL),
+(2, 'Vasconi', 'David', 'Directeur', 'dvasconi-65d79b1670c64232063993.jpg', 58593, '2024-02-22 19:05:58', '1', '1', NULL),
+(3, 'Crépin', 'Véronique', 'Assistante administrative', 'vcrepin-65d7b0bc834e6316173345.png', 72372, '2024-02-22 20:38:20', '2', '2', NULL),
+(4, 'Specq', 'Pascale', 'Secrétaire', 'pspecq-65d7b0c90991c489230420.jpg', 67973, '2024-02-22 20:38:33', '2', '2', NULL),
+(5, 'Nssis', 'Salima', 'Comptable', 'snssis-65d7b0d685cc9204175792.jpg', 48166, '2024-02-22 20:38:46', '2', '7', NULL),
+(6, 'Gense', 'Dolores', 'Chargée de mission insertion', 'dgense-65d7b0e2ee8ae894976440.jpg', 15036, '2024-02-22 20:38:58', '3', '3', NULL),
+(7, 'Soret', 'Gwenaëlle', 'Chargée de mission insertion', 'gsoret-65d7b0f10c905407629787.jpg', 19194, '2024-02-22 20:39:13', '3', '3', NULL),
+(8, 'Quéhen', 'Kelly', 'Chargée de mission insertion', 'kquehen-65d7b12d5614a780159734.jpg', 17348, '2024-02-22 20:40:13', '3', '3', NULL),
+(9, 'Fournier', 'Amélie', 'Médiatrice Sociale', 'afournier-65d7b13b215dd636935310.png', 122633, '2024-02-22 20:40:27', '3', '6', NULL),
+(10, 'Mamelin', 'Lou', 'Chargée de communication', 'lmamelin-65d7b15166d5d533816259.jpg', 6969, '2024-02-22 20:40:49', '4', '4', '5'),
+(11, 'Bulot', 'Aymeric', 'Responsable technique', 'abulot-65d7b1756d7ba529853760.jpg', 12416, '2024-02-22 20:41:25', '5', '4', NULL),
+(12, 'Gauduin', 'Bruno', 'Responsable technique adjoint', 'bgauduin-65d7b183b9b25081663584.png', 126114, '2024-02-22 20:41:39', '5', '4', NULL),
+(13, 'Ducrocq', 'Gabriel', 'Responsable logistique', 'gducrocq-65d7b194394a4038528182.jpg', 49307, '2024-02-22 20:41:56', '5', '6', NULL),
+(14, 'Bette', 'David', 'Préparateur magasinier', 'dbette-65d7b1a313410476013377.jpg', 11486, '2024-02-22 20:42:11', '5', '6', NULL),
+(15, 'Leleu', 'Thomas', 'Encadrant technqiue Cycleco', 'tleleu-65d7b1b3f0ce1496406796.jpg', 44257, '2024-02-22 20:42:27', '5', '4', NULL),
+(16, 'Houart', 'Laurent', 'Encadrant technique Bâtiment', 'lhouart-65d7b1c03b24a777697263.png', 117090, '2024-02-22 20:42:40', '5', '4', NULL),
+(17, 'Viandier', 'Dimitri', 'Encadrant technique Environnement', 'dviandier-65d7b1f3328e2244262280.png', 136156, '2024-02-22 20:43:31', '5', NULL, NULL),
+(18, 'Falempin', 'Mathieu', 'Encadrant technique Environnement', 'mfalempin-65d7b2044d5b6541562361.jpg', 12453, '2024-02-22 20:43:48', '5', NULL, NULL),
+(19, 'Soki', 'Vincent', 'Encadrant technique Environnement', 'vsoki-65d7b21633020162791888.png', 124245, '2024-02-22 20:44:06', '5', NULL, NULL),
+(20, 'Leprêtre', 'Yves', 'Encadrant technique Environnement', 'ylepretre-65d7b22c9c2a3118637709.png', 103869, '2024-02-22 20:44:28', '5', NULL, NULL),
+(21, 'Boulogne', 'Ludovic', 'Encadrant technique Bâtiment', 'lboulogne-65d7b23ddad71382156008.png', 136978, '2024-02-22 20:44:45', '5', NULL, NULL),
+(22, 'Petit', 'Laurent', 'Encadrant technique Bâtiment', 'lpetit-65d7b2507664a499219306.jpg', 14874, '2024-02-22 20:45:04', '5', NULL, NULL),
+(23, 'Playoult', 'Rémi', 'Encadrant technique Menuiserie', 'rplayout-65d7b25c28f6e443183262.png', 118232, '2024-02-22 20:45:16', '5', NULL, NULL),
+(24, 'Brulin', 'Matthieu', 'Encadrant technique Environnement', 'mbrulin-65d7b2b75e623778587094.jpg', 14915, '2024-02-22 20:46:47', '5', NULL, NULL),
+(25, 'Butez', 'Mathieu', 'Encadrant technique Bâtiment', 'mbutez-65d7b2ceb355a235349062.png', 131770, '2024-02-22 20:47:10', '5', NULL, NULL),
+(26, 'Tintillier', 'Rodrigue', 'Encadrant technique Environnement', 'rtintillier-65d7b2669cdeb209766209.png', 135591, '2024-02-22 20:45:26', '5', NULL, NULL),
+(27, 'Caux', 'Gérald', 'Encadrant technique Environnement', 'gcaux-65d7b273713df639381214.jpg', 13130, '2024-02-22 20:45:39', '5', NULL, NULL),
+(28, 'Wasselin', 'Christophe', 'Encadrant technique Environnement', 'cwasselin-65d7b27d35bb7226782259.jpg', 9711, '2024-02-22 20:45:49', '5', NULL, NULL),
+(29, 'Leprêtre', 'Mathéo', 'Encadrant technique Environnement', 'mlepretre-65d7b287502a3503113097.jpg', 7937, '2024-02-22 20:45:59', '5', NULL, NULL),
+(30, 'Fauviaux', 'Grégory', 'Encadrant technique Environnement', 'gfauviaux-65d7b29156f1f768662981.jpg', 11203, '2024-02-22 20:46:09', '5', NULL, NULL),
+(31, 'Hodicq', 'Bernard', 'Encadrant technique Bâtiment', 'bhodicq-65d7b299a6cf0841976577.jpg', 10832, '2024-02-22 20:46:17', '5', NULL, NULL),
+(32, 'Modeste', 'Annick', 'Assistante comptable', 'amodeste-65d7b30cd079e913953794.jpg', 11717, '2024-02-22 20:48:12', '2', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -804,7 +805,7 @@ ALTER TABLE `logo_rivages`
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT pour la table `newsletter`
